@@ -1,0 +1,14 @@
+/****************************************** EXERCICE 6 *******************************************/
+
+ALGORITHME addition
+VARIABLES
+    alea : ENTIER
+DÉBUT
+    alea → aleatoire(0,1)
+
+    SI (alea = 0)
+        AFFICHER alea, " : Pile"
+    SINON
+        AFFICHER alea, " : Face"
+    FINSI
+FIN
