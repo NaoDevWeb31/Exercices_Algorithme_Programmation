@@ -1,0 +1,33 @@
+/****************************************** EXERCICE 5 *******************************************/
+
+ALGORITHME main
+VARIABLES
+    nom : CHAINE DE CARACTERE
+    age : ENTIER
+    sexe : BOOLEEN
+    msg : CHAINE DE CARACTERE
+DÉBUT
+    nom → "Tya GASTON"
+    age → 20
+    sexe → FAUX
+    
+    msg → "Bonjour ", nom, "\n"
+
+    SI (sexe) ALORS
+        msg → msg + "Vous êtes un homme"
+        SI (age >= 18) ALORS
+            msg → msg + " majeur"
+        SINON
+            msg → msg + " mineur"
+        FINSI
+    SINON
+        msg → msg + "Vous êtes une femme"
+        SI (age >= 18) ALORS
+            msg → msg + " majeure"
+        SINON
+            msg → msg + " mineure"
+        FINSI
+    FINSI
+
+    AFFICHER msg
+FIN
