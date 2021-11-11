@@ -1,0 +1,38 @@
+/****************************************** EXERCICE 16 *******************************************/
+
+ALGORITHME main
+VARIABLES
+    nombre1, nombre2, nombre3, petit, grand : ENTIER
+DÉBUT
+    nombre1 → aleatoire(1,20)
+    nombre2 → aleatoire(1,20)
+    nombre3 → aleatoire(1,20)
+
+    petit → 0
+    grand → 0
+
+    AFFICHER "nb1 :  ", nombre1, " - nb2 :  ", nombre2, " - nb3 :  ", nombre3
+
+    SI (nombre1 <= nombre2 ET nombre1 <= nombre3) ALORS
+        petit → nombre1
+    SINON
+        SI (nombre2 <= nombre3) ALORS
+            petit → nombre2
+        SINON
+            petit → nombre3
+        FINSI
+    FINSI
+
+    SI (nombre1 >= nombre2 ET nombre1 >= nombre3) ALORS
+        grand → nombre1
+    SINON
+        SI (nombre2 >= nombre3) ALORS
+            grand → nombre2
+        SINON
+            grand → nombre3
+        FINSI
+    FINSI
+
+    AFFICHER petit, " est le nombre le plus petit"
+    AFFICHER grand, " est le nombre le plus grand"
+FIN

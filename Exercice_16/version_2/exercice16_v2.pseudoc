@@ -1,0 +1,46 @@
+/****************************************** EXERCICE 16 *******************************************/
+
+FONCTION retournerValeurPlusPetite(nb1, nb2, nb3)
+DÉBUT
+    SI (nb1 <= nb2 ET nb1 <= nb3) ALORS
+        RETOURNER nb1
+    SINON
+        SI (nb2 <= nb3) ALORS
+            RETOURNER nb2
+        SINON
+            RETOURNER nb3
+        FINSI
+    FINSI
+FIN
+
+FONCTION retournerValeurPlusGrande(nb1, nb2, nb3)
+DÉBUT
+    SI (nb1 >= nb2 ET nb1 >= nb3) ALORS
+        RETOURNER nb1
+    SINON
+        SI (nb2 >= nb3) ALORS
+            RETOURNER nb2
+        SINON
+            RETOURNER nb3
+        FINSI
+    FINSI
+FIN
+
+ALGORITHME main
+VARIABLES
+    alea1, alea2, alea3, petit, grand : ENTIER
+DÉBUT
+    alea1 → aleatoire(1,20)
+    alea2 → aleatoire(1,20)
+    alea3 → aleatoire(1,20)
+
+    petit → retournerValeurPlusPetite(alea1, alea2, alea3)
+    
+    grand → retournerValeurPlusGrande(alea1, alea2, alea3)
+
+    AFFICHER "nb1 :  ", alea1, " - nb2 :  ", alea2, " - nb3 :  ", alea3
+
+
+    AFFICHER petit, " est le nombre le plus petit"
+    AFFICHER grand, " est le nombre le plus grand"
+FIN
