@@ -1,0 +1,12 @@
+/****************************************** EXERCICE 2 *******************************************/
+
+ALGORITHME addition
+VARIABLES
+    nombre1 : ENTIER
+    nombre2 : ENTIER
+DÉBUT
+    nombre1 → 15
+    nombre2 → 20
+
+    AFFICHER "L'addition de ", nombre1, " + ", nombre2, " = ", (nombre1+nombre2)
+FIN
