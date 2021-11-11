@@ -1,0 +1,29 @@
+/****************************************** EXERCICE 15 *******************************************/
+
+FONCTION saisirNote()
+VARIABLE
+    saisie : ENTIER
+DÉBUT
+    AFFICHER "Saisir une note entre 0 et 20 : "
+    SAISIR saisie
+
+    TANT QUE (saisie < 0 OU saisie > 20) FAIRE
+        AFFICHER "Mauvaise saisie, recommencez : "
+        SAISIR saisie
+    FINTANTQUE
+
+    RETOURNER saisie
+FIN
+
+ALGORITHME main
+VARIABLES
+    nombre1, nombre2, nombre3, moyenne : ENTIER
+DÉBUT
+    nombre1 → saisirNote()
+    nombre2 → saisirNote()
+    nombre3 → saisirNote()
+
+    moyenne → ((nombre1 + nombre2 + nombre3) / 3)
+
+    AFFICHER "La moyenne est de ", moyenne
+FIN
