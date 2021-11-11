@@ -1,0 +1,31 @@
+/****************************************** EXERCICE 13 *******************************************/
+
+ALGORITHME main
+VARIABLES
+    nombre : ENTIER
+    nbEssai : ENTIER
+DÉBUT
+    nombre → -1
+    nbEssai → 0
+
+    FAIRE
+        nbEssai → nbEssai + 1
+        SI (nbEssai > 1) ALORS
+            AFFICHER "********** Essai numéro ", nbEssai, " **********"
+        FINSI
+
+        AFFICHER "Saisir un nombre pair et divisible par 3 : "
+        SAISIR nombre
+
+        SI (nombre mod 2 != 0) ALORS
+            AFFICHER "Le nombre n'est pas pair !"
+        FINSI
+
+        SI (nombre mod 3 != 0) ALORS
+            AFFICHER "Le nombre n'est pas divisible par 3 !"
+        FINSI
+    TANT QUE (nombre mod 2 != 0 OU nombre mod 3 != 0)
+
+    AFFICHER "******************************"
+    AFFICHER "Le nombre ", nombre, " est divisible par 2 et par 3"
+FIN
