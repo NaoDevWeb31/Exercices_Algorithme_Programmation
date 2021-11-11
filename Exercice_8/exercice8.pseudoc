@@ -1,0 +1,15 @@
+/****************************************** EXERCICE 8 *******************************************/
+
+ALGORITHME main
+VARIABLES
+    alea : ENTIER
+    resultat : ENTIER
+DÉBUT
+    alea → aleatoire(1,9)
+    resultat → 0
+
+    POUR cpt ALLANT de 1 À 10 PAR PAS DE 1 FAIRE
+        resultat → alea * cpt
+        AFFICHER alea, " * ", cpt, " = ", resultat
+    FINPOUR
+FIN
