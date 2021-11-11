@@ -1,0 +1,12 @@
+/****************************************** EXERCICE 3 *******************************************/
+
+ALGORITHME main
+VARIABLES
+    CONSTANTE ENTIER TVA → 20
+    prixHT : ENTIER
+DÉBUT
+    prixHT → 10
+
+    AFFICHER "Voici le prix : "
+    AFFICHER prixHT, "€ HT - ", (prixHT * TVA / 100 + prixHT), " € TTC "
+FIN
