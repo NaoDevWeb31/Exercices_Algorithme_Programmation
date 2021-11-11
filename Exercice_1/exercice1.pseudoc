@@ -1,0 +1,12 @@
+/****************************************** EXERCICE 1 *******************************************/
+
+ALGORITHME main
+VARIABLES
+    prenom : CHAINE DE CARACTERE
+    nom : CHAINE DE CARACTERE
+DÉBUT
+    prenom → "Matthieu"
+    nom → "GASTON"
+
+    AFFICHER "Mon nom est ", nom, " et mon prénom est ", prenom
+FIN
