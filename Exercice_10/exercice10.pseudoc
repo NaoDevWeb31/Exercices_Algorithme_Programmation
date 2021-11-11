@@ -1,0 +1,20 @@
+/****************************************** EXERCICE 10 *******************************************/
+
+ALGORITHME main
+VARIABLE
+    nombre : ENTIER
+DÉBUT
+    AFFICHER "Quel nombre voulez-vous ? : "
+    
+    SAISIR nombre
+    
+    AFFICHER "Les 5 nombres précédents sont : "
+    POUR cpt ALLANT de nombre-1 À -5 PAR PAS DE -1 FAIRE
+        AFFICHER cpt
+    FINPOUR
+
+    AFFICHER "Les 5 nombres suivants sont : "
+    POUR cpt ALLANT de nombre+1 À 5 PAR PAS DE 1 FAIRE
+        AFFICHER cpt
+    FINPOUR
+FIN
