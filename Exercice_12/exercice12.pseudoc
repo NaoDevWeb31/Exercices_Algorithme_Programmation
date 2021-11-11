@@ -1,0 +1,21 @@
+/****************************************** EXERCICE 12 *******************************************/
+
+ALGORITHME main
+VARIABLES
+    nombre, puissance, total1, total2 : ENTIER
+DÉBUT
+    AFFICHER "Saisir le nombre : "
+    SAISIR nombre
+    AFFICHER "Saisir la puissance : "
+    SAISIR puissance
+
+    total1 → 1
+    POUR cpt ALLANT de 1 À puissance PAR PAS DE 1 FAIRE
+        total → total * nombre
+    FINPOUR
+
+    total2 → pow(nombre,puissance)
+
+    AFFICHER "Total sans fonction : ", total1
+    AFFICHER "Total avec fonction : ", total2
+FIN
