@@ -1,0 +1,20 @@
+/****************************************** EXERCICE 18 *******************************************/
+
+ALGORITHME main
+VARIABLE
+    langue : CHAINE DE CARACTERE
+DÉBUT
+    FAIRE
+        AFFICHER "Choisir la langue : AL / EN / ES / PO / IT : "
+        SAISIR langue
+    TANT QUE (langue != "AL" ET langue != "EN" ET langue != "ES" ET langue != "PO" ET langue != "IT")
+
+    SELON langue
+        CAS "AL" : AFFICHER "Hallo"
+        CAS "EN" : AFFICHER "Hallo"
+        CAS "ES" : AFFICHER "Buenos dias"
+        CAS "PO" : AFFICHER "Ola"
+        CAS "IT" : AFFICHER "Buongiorno"
+        AUTREMENT : AFFICHER "Langue non pris en compte"
+    FINSELON
+FIN
