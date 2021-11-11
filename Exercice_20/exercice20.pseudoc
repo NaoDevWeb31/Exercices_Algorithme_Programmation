@@ -1,0 +1,35 @@
+/****************************************** EXERCICE 20 *******************************************/
+
+ALGORITHME main
+VARIABLES
+    nombre1,nombre2, operation, bonResultat, reponseUtilisateur : ENTIER
+DÉBUT
+    nombre1 → aleatoire(1,20)
+    nombre2 → aleatoire(1,20)
+    operation → aleatoire(1,4)
+
+    AFFICHER "Quel est le résultat du calcul suivant : "
+
+    SELON operation
+        CAS 1 : AFFICHER nombre1, " + ", nombre2, " = "
+                bonResultat → nombre1 + nombre2
+        CAS 2 : AFFICHER nombre1, " - ", nombre2, " = "
+                bonResultat → nombre1 - nombre2
+        CAS 3 : AFFICHER nombre1, " * ", nombre2, " = "
+                bonResultat → nombre1 * nombre2
+        CAS 4 : AFFICHER nombre1, " / ", nombre2, " = "
+                bonResultat → nombre1 / nombre2
+        AUTREMENT : AFFICHER "Erreur"
+    FINSELON
+
+    FAIRE
+        AFFICHER "Quelle est votre réponse ? "
+        SAISIR reponseUtilisateur
+
+        SI (reponseUtilisateur = bonResultat) ALORS
+            AFFICHER "Bonne réponse, félicitations !"
+        SINON
+            AFFICHER "Mauvaise réponse, recommencez !"
+        FINSI
+    TANT QUE (reponseUtilisateur != bonResultat)
+FIN
