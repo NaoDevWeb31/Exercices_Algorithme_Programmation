@@ -1,0 +1,18 @@
+/****************************************** EXERCICE 9 *******************************************/
+
+ALGORITHME main
+VARIABLES
+    alea : ENTIER
+    resultat : ENTIER
+DÉBUT
+    alea → aleatoire(1,20)
+
+    AFFICHER "Nombre : ", alea
+    AFFICHER "Le nombre est divisible par : "
+
+    POUR cpt ALLANT de 1 À alea PAR PAS DE 1 FAIRE
+        SI (alea mod cpt = 0) ALORS
+            AFFICHER cpt
+        FINSI
+    FINPOUR
+FIN
