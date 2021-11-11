@@ -1,0 +1,45 @@
+/****************************************** EXERCICE 19 *******************************************/
+
+FONCTION afficherMenuDevise
+VARIABLES
+    msg : CHAINE DE CARACTERE
+DÉBUT
+    msg → "****************************************\n"
+    msg → msg + "$ ou Dollars (US)\n"
+    msg → msg + "Roubles (Russie)\n"
+    msg → msg + "Yuans (Chine)\n"
+    msg → msg + "£ ou Livres (Royaume-Uni)\n"
+    AFFICHER msg
+FIN
+
+ALGORITHME main
+VARIABLES
+    CONSTANTE DECIMAL DOLLAR → 1,22
+    CONSTANTE DECIMAL ROUBLE → 91,14
+    CONSTANTE DECIMAL YUAN → 7,89
+    CONSTANTE DECIMAL LIVRE → 0,89
+    montant,montantConverti : DECIMAL
+    devise : CHAINE DE CARACTERE
+DÉBUT
+    AFFICHER "Saisir la somme en euro à convertir : "
+    SAISIR somme
+
+    afficherMenuDevise()
+    montantConverti → 0
+
+    FAIRE
+        AFFICHER "Saisir la devise souhaitée : "
+        SAISIR devise
+        SELON devise
+            CAS "$" : montantConverti → DOLLAR * montant
+            CAS "Dollars" : montantConverti → DOLLAR * montant
+            CAS "Roubles" : montantConverti → ROUBLE * montant
+            CAS "Yuans" : montantConverti → YUAN * montant
+            CAS "£" : montantConverti → LIVRE * montant
+            CAS "Libres" : montantConverti → LIVRE * montant
+            AUTREMENT : AFFICHER "La devise choisie n'est pas prise en compte"
+        FINSELON
+    TANT QUE (montantConverti = 0)
+
+    AFFICHER montant, "€ = ", montantConverti, " ", devise
+FIN
