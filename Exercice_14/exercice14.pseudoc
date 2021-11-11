@@ -1,0 +1,32 @@
+/****************************************** EXERCICE 14 *******************************************/
+
+ALGORITHME main
+VARIABLES
+    alea : ENTIER
+    nbEssai : ENTIER
+    nbSaisi : ENTIER
+DÉBUT
+    alea → aleatoire(1,100)
+    nbEssai → 0
+    nbEssai → 1
+
+    AFFICHER "Devinez le nombre choisi par l'ordinateur entre 1 et 100 !"
+
+    FAIRE
+        AFFICHER "****************************************"
+        AFFICHER "Numéro de l'essai : ", nbEssai
+        nbEssai → nbEssai + 1
+
+        AFFICHER "Saisir un nombre : "
+        SAISIR nbSaisi
+
+        SI (nbSaisi > alea) ALORS
+            AFFICHER "Trop grand"
+        FINSI
+        SI (nbSaisi < alea) ALORS
+            AFFICHER "Trop petit"
+        FINSI
+    TANT QUE (nbSaisi != alea)
+
+    AFFICHER "Félicitations ! Le nombre était : ", alea
+FIN
