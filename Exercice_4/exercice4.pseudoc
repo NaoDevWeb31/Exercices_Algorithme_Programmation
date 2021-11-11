@@ -1,0 +1,25 @@
+/****************************************** EXERCICE 4 *******************************************/
+
+ALGORITHME main
+VARIABLES
+    nom : CHAINE DE CARACTERE
+    age : ENTIER
+    sexe : BOOLEEN
+DÉBUT
+    nom → "Tya GASTON"
+    age → 20
+    sexe → FAUX
+
+    AFFICHER "Bonjour ", nom
+    SI (sexe) ALORS
+        AFFICHER "Vous êtes un homme"
+    SINON
+        AFFICHER "Vous êtes une femme"
+    FINSI
+
+    SI (age >= 18) ALORS
+        AFFICHER "Vous êtes majeur(e)"
+    SINON
+        AFFICHER "Vous êtes mineur(e)"
+    FINSI
+FIN
