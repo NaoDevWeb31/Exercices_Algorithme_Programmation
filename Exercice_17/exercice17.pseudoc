@@ -1,0 +1,32 @@
+/****************************************** EXERCICE 17 *******************************************/
+
+ALGORITHME main
+VARIABLES
+    alea : ENTIER
+    romain : CHAINE DE CARACTERE
+DÉBUT
+    alea → aleatoire(1,10)
+    romain → ""
+
+    AFFICHER "Nombre arabe : ", alea
+
+    SELON alea
+        CAS 1 : romain → "I"
+        CAS 2 : romain → "II"
+        CAS 3 : romain → "III"
+        CAS 4 : romain → "IV"
+        CAS 5 : romain → "V"
+        CAS 6 : romain → "VI"
+        CAS 7 : romain → "VII"
+        CAS 8 : romain → "VIII"
+        CAS 9 : romain → "IX"
+        CAS 10 : romain → "X"
+        AUTREMENT : AFFICHER "Nombre non pris en compte"
+    FINSELON
+
+    SI (romain != "") ALORS
+        AFFICHER "Équivalent nombre romain : ", romain
+    SINON
+        AFFICHER "Le nombre aléatoire généré n'est pas compris entre 1 et 10"
+    FINSI
+FIN
