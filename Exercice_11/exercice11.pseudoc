@@ -1,0 +1,45 @@
+/****************************************** EXERCICE 11 *******************************************/
+
+ALGORITHME main
+VARIABLES
+    separateur, ligneSeparation : CHAINE DE CARACTERE
+    prenom : CHAINE DE CARACTERE
+    nom : CHAINE DE CARACTERE
+    adresse : CHAINE DE CARACTERE
+    codePostal : ENTIER
+    ville : CHAINE DE CARACTERE
+DÉBUT
+    separateur → "*"
+    ligneSeparation → ""
+    
+    POUR cpt ALLANT de 1 À 30 PAR PAS DE 1 FAIRE
+        ligneSeparation → ligneSeparation + separateur
+    FINPOUR
+
+    AFFICHER ligneSeparation
+    AFFICHER "Merci de saisir vos informations personnelles !"
+    AFFICHER ligneSeparation
+
+    AFFICHER "Saisir votre prénom : "
+    SAISIR prenom
+
+    AFFICHER "Saisir votre nom : "
+    SAISIR nom
+
+    AFFICHER "Saisir votre adresse : "
+    SAISIR adresse
+
+    AFFICHER "Saisir votre code postal : "
+    SAISIR codePostal
+
+    AFFICHER "Saisir votre ville : "
+    SAISIR ville
+
+    AFFICHER ligneSeparation
+    AFFICHER "Vous avez saisi : "
+    AFFICHER prenom, " ", separateur, " ", nom
+    AFFICHER adresse
+    AFFICHER codePostal, " ", separateur, " ", ville
+    AFFICHER "À bientôt"
+    AFFICHER ligneSeparation
+FIN
