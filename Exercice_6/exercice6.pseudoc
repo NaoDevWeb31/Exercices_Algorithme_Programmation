@@ -1,7 +1,7 @@
 /****************************************** EXERCICE 6 *******************************************/
 
-ALGORITHME addition
-VARIABLES
+ALGORITHME main
+VARIABLE
     alea : ENTIER
 DÉBUT
     alea → aleatoire(0,1)

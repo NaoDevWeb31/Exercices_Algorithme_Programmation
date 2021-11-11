@@ -1,0 +1,22 @@
+/****************************************** EXERCICE 7 *******************************************/
+
+ALGORITHME main
+VARIABLES
+    alea : ENTIER
+    msg : CHAINE DE CARACTERE
+DÉBUT
+    alea → aleatoire(0,20)
+    msg → ""
+
+    SI (alea < 7) ALORS
+        msg → msg + "Bonjour"
+    SINON
+        SI (alea < 14) ALORS
+            msg → msg + "Salut"
+        SINON
+            msg → msg + "Hello"
+        FINSI
+    FINSI
+
+    AFFICHER "Nombre : ", alea, "\n", msg
+FIN
