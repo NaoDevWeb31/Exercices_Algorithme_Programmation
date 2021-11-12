@@ -1,0 +1,17 @@
+/****************************************** EXERCICE 31 *******************************************/
+
+ALGORITHME main
+VARIABLES
+    tabPrix[n], tabQte[n] : TABLEAU ENTIER
+    total : ENTIER
+DÉBUT
+    tabPrix → [5, 50, 23, 11]
+    tabQte → [10, 1, 4, 3]
+    total → 0
+
+    POUR cpt ALLANT de 0 À taille(tabPrix)-1 PAR PAS DE 1 FAIRE
+        total → total + (tabPrix[cpt] * tabQte[cpt])
+    FINPOUR
+
+    AFFICHER "Le prix total est de : ", total
+FIN
