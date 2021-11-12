@@ -8,13 +8,27 @@ DÉBUT
     AFFICHER "Quelle taille voulez-vous ? "
     SAISIR taille
 
-    ligne → "***************"
-    AFFICHER ligne
+    ligne → ""
 
-    POUR cpt ALLANT de 1 À taille-2 PAR PAS DE 1 FAIRE
-        hauteur → "**           **"
-        AFFICHER hauteur
+    POUR cpt1 ALLANT de 1 À taille PAR PAS DE 1 FAIRE
+        ligne → ligne + "**"
     FINPOUR
 
-    AFFICHER ligne
+    hauteur → ""
+
+    POUR cpt2 ALLANT de 1 À taille PAR PAS DE 1 FAIRE
+        SI (cpt2 = 1 OU cpt2 = taille) ALORS
+            hauteur → hauteur + "**"
+        SINON
+            hauteur → hauteur + "  "
+        FINSI
+    FINPOUR
+
+    POUR cpt0 ALLANT de 1 À taille PAR PAS DE 1 FAIRE
+        SI (cpt0 = 1 OU cpt0 = taille) ALORS
+            AFFICHER ligne
+        SINON
+            AFFICHER hauteur
+        FINSI
+    FINPOUR
 FIN
