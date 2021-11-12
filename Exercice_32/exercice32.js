@@ -2,25 +2,33 @@
 
 var tabFeu = ["_", "_", "_"];
 
-// Feu rouge
-setTimeout(function () {
-  tabFeu[0] = "x";
-  console.log(tabFeu[0] + " | " + tabFeu[1], " | " + tabFeu[2]);
-  console.log("------------------");
-}, 2000);
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 
-// Feu vert
-setTimeout(function () {
-  tabFeu[0] = "_";
-  tabFeu[2] = "x";
-  console.log(tabFeu[0] + " | " + tabFeu[1], " | " + tabFeu[2]);
-  console.log("------------------");
-}, 4000);
+async function programme() {
+  while (true) {
+    // Feu rouge
+    tabFeu[1] = "_";
+    tabFeu[0] = "x";
+    console.log(tabFeu[0] + " | " + tabFeu[1], " | " + tabFeu[2]);
+    console.log("------------------");
+    await sleep(2000);
 
-// Feu orange
-setTimeout(function () {
-  tabFeu[2] = "_";
-  tabFeu[1] = "x";
-  console.log(tabFeu[0] + " | " + tabFeu[1], " | " + tabFeu[2]);
-  console.log("------------------");
-}, 4500);
+    // Feu vert
+    tabFeu[0] = "_";
+    tabFeu[2] = "x";
+    console.log(tabFeu[0] + " | " + tabFeu[1], " | " + tabFeu[2]);
+    console.log("------------------");
+    await sleep(2000);
+
+    // Feu orange
+    tabFeu[2] = "_";
+    tabFeu[1] = "x";
+    console.log(tabFeu[0] + " | " + tabFeu[1], " | " + tabFeu[2]);
+    console.log("------------------");
+    await sleep(500);
+  }
+}
+
+programme();
