@@ -1,0 +1,42 @@
+/****************************************** EXERCICE 26 *******************************************/
+
+FONCTION factorielleBoucle(factorielle)
+VARIABLE
+    resultat : ENTIER
+DÉBUT
+    resultat → 1
+    
+    POUR cpt ALLANT de 1 À factorielle PAR PAS DE 1 FAIRE
+        resultat → resultat * cpt
+    FINPOUR
+
+    RETOURNER resultat
+FIN
+
+FONCTION factorielleRecursive(factorielle)
+DÉBUT
+    SI (factorielle <= 1) ALORS
+        RETOURNER 1
+    SINON
+        RETOURNER factorielle * factorielleRecursive(factorielle - 1)
+    FINSI
+FIN
+
+ALGORITHME main
+VARIABLES
+    nombre : ENTIER
+    ligneSeparation : CHAINE DE CARACTERE
+DÉBUT
+    ligneSeparation → "------------------"
+
+    AFFICHER "Quelle est la factorielle voulue ? : "
+    SAISIR nombre
+
+    AFFICHER ligneSeparation
+    AFFICHER "Version boucle :"
+    AFFICHER "La factorielle de ", nombre, " = ", factorielleBoucle(nombre)
+    
+    AFFICHER ligneSeparation
+    AFFICHER "Version récursive :"
+    AFFICHER "La factorielle de ", nombre, " = ", factorielleRecursive(nombre)
+FIN
