@@ -1,0 +1,45 @@
+/****************************************** EXERCICE 28 *******************************************/
+
+FONCTION afficherMenu()
+VARIABLE
+    msg : CHAINE DE CARACTERE
+DÉBUT
+    msg → "------------------------\n"
+    msg → msg + "----------Menu----------\n"
+    msg → msg + "1 : Périmètre\n"
+    msg → msg + "2 : Aire\n"
+    msg → msg + "------------------------\n"
+    AFFICHER msg
+FIN
+
+FONCTION calculerPerimetre(longueur, largeur)
+DÉBUT
+    RETOURNER 2 * (longueur + largeur)
+FIN
+
+FONCTION calculerAire(longueur, largeur)
+DÉBUT
+    RETOURNER longueur * largeur
+FIN
+
+ALGORITHME main
+VARIABLES
+    longueur, largeur, saisie : ENTIER
+DÉBUT
+    AFFICHER "Quelle est la longueur du rectangle ? "
+    SAISIR longueur
+    AFFICHER "Quelle est la largeur du rectangle ? "
+    SAISIR largeur
+
+    afficherMenu()
+
+    FAIRE
+        AFFICHER "Quel est votre choix ? : "
+        SAISIR saisie
+    TANT QUE (saisie != 1 ET saisie != 2)
+
+    SELON saisie
+        CAS 1 : AFFICHER "Le périmètre d'un rectangle de ", longueur, " par ", largeur, " est de ", calculerPerimetre(longueur, largeur)
+        CAS 2 : AFFICHER "L'aire d'un rectangle de ", longueur, " par ", largeur, " est de ", calculerAire(longueur, largeur)
+    FINSELON
+FIN

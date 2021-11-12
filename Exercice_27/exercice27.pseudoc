@@ -33,10 +33,10 @@ DÉBUT
 
     FAIRE
         AFFICHER "Quel est votre choix ? : "
+        SAISIR saisie
         SELON saisie
             CAS 1 : AFFICHER "Le périmètre d'un cercle de rayon ", rayon, " est de : ", calculerPerimetre(rayon)
             CAS 2 : AFFICHER "L'aire d'un cercle de rayon ", rayon, " est de : ", calculerAire(rayon)
-            AUTREMENT : AFFICHER ""
         FINSELON
     TANT QUE (saisie != 1 ET saisie != 2)
 FIN
