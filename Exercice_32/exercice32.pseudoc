@@ -1,0 +1,28 @@
+/****************************************** EXERCICE 32 *******************************************/
+
+ALGORITHME main
+VARIABLE
+    tabFeu[c] : TABLEAU CHAINE DE CARACTERE
+DÉBUT
+    tabFeu → ["_", "_", "_"]
+
+    // Feu rouge
+    tabFeu[0] → "x"
+    AFFICHER tabFeu[0], " | ", tabFeu[1], " | ", tabFeu[2]
+    AFFICHER "------------------"
+    attendre(2000)
+
+    // Feu vert
+    tabFeu[0] → "_"
+    tabFeu[2] → "x"
+    AFFICHER tabFeu[0], " | ", tabFeu[1], " | ", tabFeu[2]
+    AFFICHER "------------------"
+    attendre(2000)
+
+    // Feu orange
+    tabFeu[2] → "_"
+    tabFeu[1] → "x"
+    AFFICHER tabFeu[0], " | ", tabFeu[1], " | ", tabFeu[2]
+    AFFICHER "------------------"
+    attendre(500)
+FIN
