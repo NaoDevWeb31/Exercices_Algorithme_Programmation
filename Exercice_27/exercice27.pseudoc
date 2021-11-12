@@ -1,0 +1,42 @@
+/****************************************** EXERCICE 27 *******************************************/
+
+FONCTION afficherMenu()
+VARIABLE
+    msg : CHAINE DE CARACTERE
+DÉBUT
+    msg → "------------------------\n"
+    msg → msg + "----------Menu----------\n"
+    msg → msg + "1 : Périmètre\n"
+    msg → msg + "2 : Aire\n"
+    msg → msg + "------------------------"
+    AFFICHER msg
+FIN
+
+FONCTION calculerAire(rayon)
+DÉBUT
+    RETOURNER rayon * rayon * π
+FIN
+
+FONCTION calculerPerimetre(rayon)
+DÉBUT
+    RETOURNER 2 * rayon * π
+FIN
+
+ALGORITHME main
+VARIABLES
+    rayon, saisie : ENTIER
+DÉBUT
+    AFFICHER "Quel est le rayon du cercle ? "
+    SAISIR rayon
+
+    afficherMenu()
+
+    FAIRE
+        AFFICHER "Quel est votre choix ? : "
+        SELON saisie
+            CAS 1 : AFFICHER "Le périmètre d'un cercle de rayon ", rayon, " est de : ", calculerPerimetre(rayon)
+            CAS 2 : AFFICHER "L'aire d'un cercle de rayon ", rayon, " est de : ", calculerAire(rayon)
+            AUTREMENT : AFFICHER ""
+        FINSELON
+    TANT QUE (saisie != 1 ET saisie != 2)
+FIN
