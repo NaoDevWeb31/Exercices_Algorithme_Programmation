@@ -1,7 +1,7 @@
 /****************************************** EXERCICE 22 *******************************************/
 
 function estBissextile(annee) {
-  return ((annee % 4 === 0 && annee % 100 === 0) || annee % 400 === 0);
+  return ((annee % 4 === 0 && annee % 100 != 0) || annee % 400 === 0);
 }
 
 function affichageAnneeBissextile(annee) {

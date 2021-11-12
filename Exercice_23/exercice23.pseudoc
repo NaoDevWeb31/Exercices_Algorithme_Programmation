@@ -1,0 +1,67 @@
+/****************************************** EXERCICE 23 *******************************************/
+
+FONCTION estBissextile(annee)
+DÉBUT
+    RETOURNER ((annee mod 4 = 0 ET annee mod 100 != 0) OU annee mod 400 = 0)
+FIN
+
+FONCTION nbJoursMensuel(mois, annee)
+DÉBUT
+    SELON mois
+        CAS "Janvier" : RETOURNER 31
+        CAS "Février" : SI (estBissextile(annee)) ALORS
+                            RETOURNER 29
+                        SINON
+                            RETOURNER 28
+                        FINSI
+        CAS "Mars" : RETOURNER 31
+        CAS "Avril" : RETOURNER 30
+        CAS "Mai" : RETOURNER 31
+        CAS "Juin" : RETOURNER 30
+        CAS "Juillet" : RETOURNER 31
+        CAS "Août" : RETOURNER 31
+        CAS "Septembre" : RETOURNER 30
+        CAS "Octobre" : RETOURNER 31
+        CAS "Novembre" : RETOURNER 30
+        CAS "Décembre" : RETOURNER 31
+        AUTREMENT : RETOURNER 0
+    FINSELON
+FIN
+
+ALGORITHME main
+VARIABLES
+    mois : CHAINE DE CARACTERE
+    nbJours : ENTIER
+DÉBUT
+    mois → "Janvier"
+    nbJours → nbJoursMensuel(mois, 2019)
+    SI (nbJours != 0) ALORS
+        AFFICHER nbJours, " jours en ", mois, " 2019"
+    SINON
+        AFFICHER "Le mois n'est pas pris en compte"
+    FINSI
+
+    mois → "Février"
+    nbJours → nbJoursMensuel(mois, 2019)
+    SI (nbJours != 0) ALORS
+        AFFICHER nbJours, " jours en ", mois, " 2019"
+    SINON
+        AFFICHER "Le mois n'est pas pris en compte"
+    FINSI
+
+    mois → "Janvier"
+    nbJours → nbJoursMensuel(mois, 2020)
+    SI (nbJours != 0) ALORS
+        AFFICHER nbJours, " jours en ", mois, " 2020"
+    SINON
+        AFFICHER "Le mois n'est pas pris en compte"
+    FINSI
+
+    mois → "Novembre"
+    nbJours → nbJoursMensuel(mois, 2020)
+    SI (nbJours != 0) ALORS
+        AFFICHER nbJours, " jours en ", mois, " 2020"
+    SINON
+        AFFICHER "Le mois n'est pas pris en compte"
+    FINSI
+FIN

@@ -2,7 +2,7 @@
 
 FONCTION estBissextile(annee)
 DÉBUT
-    RETOURNER ((annee mod 4 = 0 ET annee mod 100 = 0) OU annee mod 400 = 0)
+    RETOURNER ((annee mod 4 = 0 ET annee mod 100 != 0) OU annee mod 400 = 0)
 FIN
 
 FONCTION affichageAnneeBissextile(annee)
