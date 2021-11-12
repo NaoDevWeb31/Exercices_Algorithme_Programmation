@@ -1,0 +1,108 @@
+/****************************************** EXERCICE 29 *******************************************/
+
+FONCTION afficherMenuPrincipal()
+VARIABLE
+    msg : CHAINE DE CARACTERE
+DÉBUT
+    msg → "------------------------\n"
+    msg → msg + "-----Menu Principal-----\n"
+    msg → msg + "A : Cercle\n"
+    msg → msg + "B : Rectangle\n"
+    msg → msg + "Q : Quitter\n"
+    msg → msg + "------------------------\n"
+    AFFICHER msg
+FIN
+
+FONCTION afficherMenu()
+VARIABLE
+    msg : CHAINE DE CARACTERE
+DÉBUT
+    msg → "------------------------\n"
+    msg → msg + "----------Menu----------\n"
+    msg → msg + "1 : Périmètre\n"
+    msg → msg + "2 : Aire\n"
+    msg → msg + "------------------------\n"
+    AFFICHER msg
+FIN
+
+FONCTION calculerAireCercle(rayon)
+DÉBUT
+    RETOURNER rayon * rayon * π
+FIN
+
+FONCTION calculerPerimetreCercle(rayon)
+DÉBUT
+    RETOURNER 2 * rayon * π
+FIN
+
+FONCTION gererCercle()
+VARIABLES
+    rayon, saisie : ENTIER
+DÉBUT
+    AFFICHER "Quel est le rayon du cercle ? "
+    SAISIR rayon
+
+    afficherMenu()
+
+    FAIRE
+        AFFICHER "Quel est votre choix ? : "
+        SAISIR saisie
+    TANT QUE (saisie != 1 ET saisie != 2)
+
+        SELON saisie
+            CAS 1 : AFFICHER "Le périmètre d'un cercle de rayon ", rayon, " est de : ", calculerPerimetreCercle(rayon)
+            CAS 2 : AFFICHER "L'aire d'un cercle de rayon ", rayon, " est de : ", calculerAireCercle(rayon)
+        FINSELON
+FIN
+
+FONCTION calculerPerimetreRectangle(longueur, largeur)
+DÉBUT
+    RETOURNER 2 * (longueur + largeur)
+FIN
+
+FONCTION calculerAireRectangle(longueur, largeur)
+DÉBUT
+    RETOURNER longueur * largeur
+FIN
+
+FONCTION gererRectangle()
+VARIABLES
+    longueur, largeur, saisie : ENTIER
+DÉBUT
+    AFFICHER "Quelle est la longueur du rectangle ? "
+    SAISIR longueur
+    AFFICHER "Quelle est la largeur du rectangle ? "
+    SAISIR largeur
+
+    afficherMenu()
+
+    FAIRE
+        AFFICHER "Quel est votre choix ? : "
+        SAISIR saisie
+    TANT QUE (saisie != 1 ET saisie != 2)
+
+    SELON saisie
+        CAS 1 : AFFICHER "Le périmètre d'un rectangle de ", longueur, " par ", largeur, " est de ", calculerPerimetreRectangle(longueur, largeur)
+        CAS 2 : AFFICHER "L'aire d'un rectangle de ", longueur, " par ", largeur, " est de ", calculerAireRectangle(longueur, largeur)
+    FINSELON
+FIN
+
+ALGORITHME main
+VARIABLE
+    choixPrincipal : CHAINE DE CARACTERE
+DÉBUT
+    FAIRE
+        afficherMenuPrincipal()
+        AFFICHER "Quel est votre choix ? : "
+        SAISIR choixPrincipal
+
+        SELON choixPrincipal
+            CAS "A" : gererCercle()
+            AFFICHER "Le périmètre d'un rectangle de ", longueur, " par ", largeur, " est de ", calculerPerimetre(longueur, largeur)
+            CAS "B" : gererRectangle()
+            AFFICHER "L'aire d'un rectangle de ", longueur, " par ", largeur, " est de ", calculerAire(longueur, largeur)
+            CAS "Q" : AFFICHER "À + !"
+            AUTREMENT : AFFICHER "Cas non pris en compte, recommencez !"
+        FINSELON
+    TANT QUE (choixPrincipal != "Q")
+FIN
