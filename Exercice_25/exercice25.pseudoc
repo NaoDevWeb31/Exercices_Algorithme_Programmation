@@ -1,0 +1,20 @@
+/****************************************** EXERCICE 25 *******************************************/
+
+ALGORITHME main
+VARIABLES
+    ligne, hauteur : CHAINE DE CARACTERE
+    taille : ENTIER
+DÉBUT
+    AFFICHER "Quelle taille voulez-vous ? "
+    SAISIR taille
+
+    ligne → "***************"
+    AFFICHER ligne
+
+    POUR cpt ALLANT de 1 À taille-2 PAR PAS DE 1 FAIRE
+        hauteur → "**           **"
+        AFFICHER hauteur
+    FINPOUR
+
+    AFFICHER ligne
+FIN
