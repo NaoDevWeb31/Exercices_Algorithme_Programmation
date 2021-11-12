@@ -1,0 +1,21 @@
+/****************************************** EXERCICE 24 *******************************************/
+
+ALGORITHME main
+VARIABLES
+    ligne, decalage : CHAINE DE CARACTERE
+    nbMarches : ENTIER
+DÉBUT
+    AFFICHER "Combien de marches ? "
+    SAISIR nbMarches
+
+    POUR cpt ALLANT de 1 À nbMarches PAR PAS DE 1 FAIRE
+        ligne → "_/"
+
+        POUR cpt2 ALLANT de nbMarches-1 À cpt PAR PAS DE -1 FAIRE
+            decalage → "  "
+            ligne → decalage + ligne
+        FINPOUR
+
+        AFFICHER lignes
+    FINPOUR
+FIN
