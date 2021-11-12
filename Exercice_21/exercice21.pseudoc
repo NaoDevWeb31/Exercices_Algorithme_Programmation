@@ -1,0 +1,38 @@
+/****************************************** EXERCICE 21 *******************************************/
+
+ALGORITHME main
+VARIABLES
+    CONSTANTE ENTIER TVA → 20
+    choix, prix, nbProduits : ENTIER
+DÉBUT
+    AFFICHER "Voici la liste des produits"
+    AFFICHER "1 - TV : 400€"
+    AFFICHER "2 - Ordinateur : 700€"
+    AFFICHER "3 - Téléphone : 200€"
+    AFFICHER "4 - Portable : 900€"
+
+    choix → 0
+    prix → 0
+
+    TANT QUE (choix < 1 OU choix > 4)
+        AFFICHER "Quel produit voulez-vous acheter ? "
+        SAISIR choix
+        SELON choix
+            CAS 1 : prix → 400
+            CAS 2 : prix → 700
+            CAS 3 : prix → 200
+            CAS 4 : prix → 900
+            AUTREMENT : AFFICHER "Produit inexistant, recommencez"
+        FINSELON
+    FINTANTQUE
+
+    nbProduits → 0
+
+    TANT QUE (nbProduits <= 0)
+        AFFICHER "Combien de produit voulez-vous ?"
+        SAISIR nbProduits
+    FINTANTQUE
+
+    AFFICHER "Total HT : ", prix * nbProduits, "€"
+    AFFICHER "Total TTC : ", prix * nbProduits * (1+(TVA/100)), "€"
+FIN
