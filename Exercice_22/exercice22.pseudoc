@@ -1,0 +1,29 @@
+/****************************************** EXERCICE 22 *******************************************/
+
+FONCTION estBissextile(annee)
+DÉBUT
+    RETOURNER ((annee mod 4 = 0 ET annee mod 100 = 0) OU annee mod 400 = 0)
+FIN
+
+FONCTION affichageAnneeBissextile(annee)
+VARIABLE
+    msg : CHAINE DE CARACTERE
+DÉBUT
+    msg → annee, " est une année "
+    SI (NON estBissextile(annee)) ALORS
+        msg → msg + "non "
+    FINSI
+    msg → msg + "bissextile"
+    AFFICHER msg
+FIN
+
+ALGORITHME main
+VARIABLE
+    msg : CHAINE DE CARACTERE
+DÉBUT
+    affichageAnneeBissextile(1900)
+
+    affichageAnneeBissextile(2000)
+
+    affichageAnneeBissextile(2020)
+FIN
