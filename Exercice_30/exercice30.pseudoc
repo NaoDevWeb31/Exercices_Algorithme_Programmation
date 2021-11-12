@@ -1,0 +1,23 @@
+/****************************************** EXERCICE 30 *******************************************/
+
+ALGORITHME main
+VARIABLES
+    tabNotes : TABLEAU ENTIER
+    moyenne, note : ENTIER
+DÉBUT
+    tabNotes → [12, 14, 16, 18, 10, 11, 10, 13]
+    moyenne → 0
+
+    POUR cpt ALLANT de 0 À taille(tabNotes)-1 PAR PAS DE 1 FAIRE
+        note → tabNotes[cpt]
+
+        SI (note mod 2 != 0) ALORS
+            note → note + 1
+        FINSI
+
+        moyenne → moyenne + note
+    FINPOUR
+
+    moyenne → moyenne / taille(tabNotes)
+    AFFICHER "La moyenne est de : ", moyenne
+FIN
