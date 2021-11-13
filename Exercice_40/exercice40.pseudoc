@@ -1,0 +1,100 @@
+/****************************************** EXERCICE 40 *******************************************/
+
+FONCTION afficherMenu()
+VARIABLE
+    msg : CHAINE DE CARACTERE
+DÉBUT
+    msg → "******************************\n"
+    msg → msg + "1/ Encoder un message\n"
+    msg → msg + "2/ Décoder un message\n"
+    msg → msg + "0/ Quitter\n"
+    msg → msg + "******************************"
+    AFFICHER msg
+FIN
+
+FONCTION lettreVersMorse(lettre)
+DÉBUT
+    SELON enMinuscules(lettre)
+        CAS "a" : RETOURNER ".-"
+        CAS "b" : RETOURNER "-..."
+        CAS "c" : RETOURNER "-.-."
+        // ...
+        CAS "z" : RETOURNER "--.."
+        CAS " " : RETOURNER " "
+        AUTREMENT : RETOURNER ""
+    FINSELON
+FIN
+
+FONCTION convertirMessageEnMorse(msg)
+VARIABLE
+    msgEnMorse : CHAINE DE CARACTERE
+DÉBUT
+    msgEnMorse → ""
+
+    POUR cpt ALLANT de 0 À taille(msg)-1 PAR PAS DE 1 FAIRE
+        msgEnMorse → msgEnMorse + lettreVersMorse(msg[cpt]) + " "
+    FINPOUR
+
+    RETOURNER msgEnMorse
+FIN
+
+FONCTION morseVersLettre(symbole)
+DÉBUT
+    SELON symbole
+        CAS ".-" : RETOURNER "a"
+        CAS "-..." : RETOURNER "b"
+        CAS "-.-." : RETOURNER "c"
+        // ...
+        CAS "--.." : RETOURNER "z"
+        CAS " " : RETOURNER " "
+        AUTREMENT : RETOURNER ""
+    FINSELON
+FIN
+
+FONCTION decodeMessageMorse(msg)
+VARIABLES
+    msgDecode, lettreMorse : CHAINE DE CARACTERE
+DÉBUT
+    msgDecode → ""
+    lettreMorse → ""
+
+    POUR cpt ALLANT de 0 À taille(msg)-1 PAR PAS DE 1 FAIRE
+        SI (msg[cpt] != " ") ALORS
+            lettreMorse → lettreMorse + msg[cpt]
+        FINSI
+
+        SI (msg[cpt] = " " ET msg[cpt-1] = " ") ALORS
+            msgDecode → msgDecode + " "
+        FINSI
+
+
+        SI (msg[cpt] = " " OU cpt = taille(msg)-1) ALORS
+            msgDecode → msgDecode + morseVersLettre(lettreMorse)
+            lettreMorse → ""
+        FINSI
+    FINPOUR
+
+    RETOURNER msgDecode
+FIN
+
+ALGORITHME main
+VARIABLE
+    choix : ENTIER
+    msg : CHAINE DE CARACTERE
+    CONSTANTE CHAINE DE CARACTERE MSGCODE → "-... --- -. -. . / ..-. --- .-. -- .- - .. --- -."
+DÉBUT
+    FAIRE
+        afficherMenu()
+        AFFICHER "Quel est votre choix ? : "
+        SAISIR choix
+
+        SELON choix
+            CAS 1 : AFFICHER "Saisir le message : "
+                    SAISIR msg
+                    AFFICHER convertirMessageEnMorse(msg)
+            CAS 2 : AFFICHER decodeMessageMorse(MSGCODE)
+            CAS 0 :  AFFICHER "À +"
+            AUTREMENT : AFFICHER "Invalide, recommencez !"
+        FINSELON
+    TANT QUE (choix != 0)
+FIN

@@ -30,9 +30,8 @@ ALGORITHME main
 VARIABLE
     msg : CHAINE DE CARACTERE
 DÉBUT
-    FAIRE
-        AFFICHER "Saisir le message : "
-        SAISIR msg
+    AFFICHER "Saisir le message : "
+    SAISIR msg
         
-        AFFICHER convertirMessageEnMorse(msg)
+    AFFICHER convertirMessageEnMorse(msg)
 FIN
