@@ -39,3 +39,4 @@ DÉBUT
     SINON
         AFFICHER "Vous êtes connecté et vos accès sont : ", role
     FINSI
+FIN

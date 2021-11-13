@@ -1,0 +1,28 @@
+/****************************************** EXERCICE 35 *******************************************/
+
+FONCTION afficherUnUtilisateur(utilisateur)
+DÉBUT
+    AFFICHER "*************************************************"
+    AFFICHER "*****************DÉBUT AFFICHAGE*****************"
+    AFFICHER "*************************************************"
+    AFFICHER "Identifiant de l'utilisateur : ", utilisateur[0]
+    AFFICHER "Mot de passe de l'utilisateur : ", utilisateur[1]
+    AFFICHER "Rôle de l'utilisateur : ", utilisateur[2]
+    AFFICHER "*************************************************"
+FIN
+
+FONCTION afficherUtilisateurs(tabUtilisateurs)
+DÉBUT
+    POUR cpt ALLANT de 0 À taille(tabUtilisateurs)-1 PAR PAS DE 1 FAIRE
+        afficherUnUtilisateur(tabUtilisateurs[cpt])
+    FINPOUR
+FIN
+
+ALGORITHME main
+VARIABLES
+    tabUtilisateurs[c][c] : TABLEAU CHAINE DE CARACTERE
+DÉBUT
+    tabUtilisateurs → [["Tya", "test1", "admin"], ["Milo", "test2", "User"], ["Lili", "test3", "user"]]
+    
+    afficherUtilisateurs(tabUtilisateurs)
+FIN
