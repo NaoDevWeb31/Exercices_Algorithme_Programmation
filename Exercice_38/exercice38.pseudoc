@@ -1,0 +1,33 @@
+/****************************************** EXERCICE 38 *******************************************/
+
+FONCTION recupererLettre(nombre)
+DÉBUT
+    SELON nombre
+        CAS 1 : RETOURNER "a"
+        CAS 2 : RETOURNER "b"
+        CAS 3 : RETOURNER "c"
+        // ...
+        AUTREMENT : AFFICHER "Lettre inexistante !"
+                    RETOURNER ""
+    FINSELON
+FIN
+
+ALGORITHME main
+VARIABLES
+    alea : ENTIER
+    lettre, mot : CHAINE DE CARACTERE
+DÉBUT
+    alea → aleatoire(1,26)
+    lettre → recupererLettre(alea)
+
+    FAIRE
+        AFFICHER "Saisir un mot en commençant par un : \"", lettre, "\" : "
+        SAISIR mot
+
+        SI (enMinuscules(mot[0]) != lettre) ALORS
+            AFFICHER "Le mot saisi ne commence pas par un \"", lettre, "\", recommencez !"
+        FINSI
+    TANT QUE (enMinuscules(mot[0]) != lettre)
+
+    AFFICHER "Parfait !"
+FIN
