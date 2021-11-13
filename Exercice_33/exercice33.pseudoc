@@ -1,0 +1,36 @@
+/****************************************** EXERCICE 33 *******************************************/
+
+FONCTION verifierConnexionUtilisateur(tabUtilisateurs, login, mdp)
+DÉBUT
+    POUR cpt ALLANT de 0 À taille(tabUtilisateurs)-1 PAR PAS DE 1 FAIRE
+        SI (login = tabUtilisateurs[cpt][0] ET mdp = tabUtilisateurs[cpt][1]) ALORS
+            RETOURNER VRAI
+        FINSI
+    FINPOUR
+
+    RETOURNER FAUX
+FIN
+
+ALGORITHME main
+VARIABLES
+    tabUtilisateurs[c][c] : TABLEAU CHAINE DE CARACTERE
+    login, mdp : CHAINE DE CARACTERE
+    estConnecte : BOOLEEN
+DÉBUT
+    tabUtilisateurs → [["Tya", "test1"], ["Milo", "test2"], ["Lili", "test3"]]
+
+    FAIRE
+        AFFICHER "Saisir votre login : "
+        SAISIR login
+        AFFICHER "Saisir votre mot de passe : "
+        SAISIR mdp
+
+        estConnecte → verifierConnexionUtilisateur(tabUtilisateurs, login, mdp)
+        
+        SI NON estConnecte ALORS
+            AFFICHER "Combinaison login / mot de passe incorrect, recommencez !"
+        SINON
+            AFFICHER "Vous êtes connecté !"
+        FINSI
+    TANT QUE (NON estConnecte)
+FIN
