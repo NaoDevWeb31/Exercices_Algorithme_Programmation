@@ -15,11 +15,15 @@ function afficherUnUtilisateur(utilisateur) {
   console.log("Identifiant de l'utilisateur : " + utilisateur[0]);
   console.log("Mot de passe de l'utilisateur : " + utilisateur[1]);
   console.log("Rôle de l'utilisateur : " + utilisateur[2]);
-  console.log("-----------------------FIN-----------------------");
 }
 
 function afficherUtilisateurs(tabUtilisateurs) {
   for (var cpt = 0; cpt < tabUtilisateurs.length; cpt++) {
-    afficherUnUtilisateur(tabUtilisateurs[cpt]);
+    if (cpt === tabUtilisateurs.length - 1) {
+      afficherUnUtilisateur(tabUtilisateurs[cpt]);
+      console.log("-----------------------FIN-----------------------");
+    } else {
+      afficherUnUtilisateur(tabUtilisateurs[cpt]);
+    }
   }
 }
