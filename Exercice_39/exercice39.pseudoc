@@ -1,0 +1,38 @@
+/****************************************** EXERCICE 39 *******************************************/
+
+FONCTION lettreVersMorse(lettre)
+DÉBUT
+    SELON enMinuscules(lettre)
+        CAS "a" : RETOURNER ".-"
+        CAS "b" : RETOURNER "-..."
+        CAS "c" : RETOURNER "-.-."
+        // ...
+        CAS "z" : RETOURNER "--.."
+        CAS " " : RETOURNER " "
+        AUTREMENT : RETOURNER ""
+    FINSELON
+FIN
+
+FONCTION convertirMessageEnMorse(msg)
+VARIABLE
+    msgEnMorse : CHAINE DE CARACTERE
+DÉBUT
+    msgEnMorse → ""
+
+    POUR cpt ALLANT de 0 À taille(msg)-1 PAR PAS DE 1 FAIRE
+        msgEnMorse → msgEnMorse + lettreVersMorse(msg[cpt]) + " "
+    FINPOUR
+
+    RETOURNER msgEnMorse
+FIN
+
+ALGORITHME main
+VARIABLE
+    msg : CHAINE DE CARACTERE
+DÉBUT
+    FAIRE
+        AFFICHER "Saisir le message : "
+        SAISIR msg
+        
+        AFFICHER convertirMessageEnMorse(msg)
+FIN
