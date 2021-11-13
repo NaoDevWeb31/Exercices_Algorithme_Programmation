@@ -1,0 +1,126 @@
+/****************************************** EXERCICE 37 *******************************************/
+
+FONCTION afficherMenuPrincipal()
+VARIABLE
+    msg : CHAINE DE CARACTERE
+DÉBUT
+    msg → "*************************************************\n"
+    msg → msg + "1/ Afficher les utilisateurs\n"
+    msg → msg + "2/ Créer un utilisateur\n"
+    msg → msg + "3/ Modifier un utilisateur\n"
+    msg → msg + "4/ Supprimer un utilisateur\n"
+    msg → msg + "9/ Quitter\n"
+    AFFICHER msg
+FIN
+
+FONCTION afficherUnUtilisateur(utilisateur)
+DÉBUT
+    AFFICHER "*************************************************"
+    AFFICHER "*****************DÉBUT AFFICHAGE*****************"
+    AFFICHER "*************************************************"
+    AFFICHER "Identifiant de l'utilisateur : ", utilisateur[0]
+    AFFICHER "Mot de passe de l'utilisateur : ", utilisateur[1]
+    AFFICHER "Rôle de l'utilisateur : ", utilisateur[2]
+    AFFICHER "*************************************************"
+FIN
+
+FONCTION afficherUtilisateurs(tabUtilisateurs)
+DÉBUT
+    POUR cpt ALLANT de 0 À taille(tabUtilisateurs)-1 PAR PAS DE 1 FAIRE
+        afficherUnUtilisateur(tabUtilisateurs[cpt])
+    FINPOUR
+FIN
+
+FONCTION creerUtilisateur()
+VARIABLES
+    tabUtilisateur[c] : TABLEAU CHAINE DE CARACTERE
+    role : CHAINE DE CARACTERE
+DÉBUT
+    AFFICHER "Saisir l'identifiant de l'utilisateur : "
+    SAISIR tabUtilisateur[0]
+
+    AFFICHER "Saisir le password de l'utilisateur': "
+    SAISIR tabUtilisateur[1]
+
+    tabUtilisateur[2] → saisirRole()
+
+    RETOURNER tabUtilisateur
+FIN
+
+FONCTION rechercherUtilisateur(tabUtilisateurs, identifiant)
+DÉBUT
+    POUR cpt ALLANT de 0 À taille(tabUtilisateurs)-1 PAR PAS DE 1 FAIRE
+        SI (tabUtilisateurs[cpt][0] = identifiant) ALORS
+            RETOURNER cpt
+        FINSI
+    FINPOUR
+
+    RETOURNER -1
+FIN
+
+FONCTION recupererUtilisateur(tabUtilisateurs)
+VARIABLES
+    indiceTab : ENTIER
+    identifiant : CHAINE DE CARACTERE
+DÉBUT
+    indiceTab → -1
+
+    FAIRE
+        AFFICHER "Saisir l'identifiant de l'utilisateur : "
+        SAISIR identifiant
+        indiceTab → rechercherUtilisateur(tabUtilisateurs, identifiant)
+        SI (indiceTab = -1) ALORS
+            AFFICHER "Identifiant inexistant, recommencez !"
+        FINSI
+    TANT QUE (indiceTab = -1)
+
+    RETOURNER indiceTab
+FIN
+
+FONCTION saisirRole()
+VARIABLE
+    role : CHAINE DE CARACTERE
+DÉBUT
+    FAIRE
+        AFFICHER "Saisir le rôle de l'utilisateur': admin / user / visiteur : "
+        SAISIR role
+        SI (role != "admin" ET role != "user" ET role != "visiteur") ALORS
+            AFFICHER "Rôle invalide, recommencez !"
+        FINSI
+    TANT QUE (role != "admin" ET role != "user" ET role != "visiteur")
+
+    RETOURNER role
+FIN
+
+ALGORITHME main
+VARIABLES
+    tabUtilisateurs[c][c] : TABLEAU CHAINE DE CARACTERE
+    choix, indiceUtilisateur : ENTIER
+DÉBUT
+    tabUtilisateurs → [["Tya", "test1", "admin"], ["Milo", "test2", "User"], ["Lili", "test3", "user"]]
+    
+    FAIRE
+        afficherMenuPrincipal()
+        AFFICHER "Quel est votre choix ? : "
+        SAISIR choix
+        SELON choix
+            CAS 1 : afficherUtilisateurs(tabUtilisateurs)
+            CAS 2 : tabUtilisateurs[taille(tabUtilisateurs)] → creerUtilisateur()
+            CAS 3 : AFFICHER tabUtilisateurs
+                    indiceUtilisateur → recupererUtilisateur(tabUtilisateurs)
+                    SAISIR tabUtilisateurs[indiceUtilisateur][0]
+                    SAISIR tabUtilisateurs[indiceUtilisateur][1]
+                    tabUtilisateurs[indiceUtilisateur][2] → saisirRole()
+                    AFFICHER tabUtilisateurs
+            CAS 4 : AFFICHER tabUtilisateurs
+                    indiceUtilisateur → recupererUtilisateur(tabUtilisateurs)
+                    POUR cpt ALLANT de indiceUtilisateur À taille(tabUtilisateurs)-2 PAR PAS DE 1 FAIRE
+                        tabUtilisateurs[cpt] → tabUtilisateurs[cpt+1]
+                    FINPOUR
+                    pop(tabUtilisateurs)
+                    AFFICHER tabUtilisateurs
+            CAS 9 : AFFICHER "À +"
+            AUTREMENT : AFFICHER "Cas non pris en compte, recommencez !"
+        FINSELON
+    TANT QUE (choix != 9)
+FIN

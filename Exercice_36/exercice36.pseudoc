@@ -66,7 +66,7 @@ DÉBUT
         SAISIR choix
         SELON choix
             CAS 1 : afficherUtilisateurs(tabUtilisateurs)
-            CAS 2 : tabUtilisateurs[taille(tabUtilisateurs)] → creerUtilisateur(tabUtilisateurs)
+            CAS 2 : tabUtilisateurs[taille(tabUtilisateurs)] → creerUtilisateur()
             CAS 9 : AFFICHER "À +"
             AUTREMENT : AFFICHER "Cas non pris en compte, recommencez !"
         FINSELON
