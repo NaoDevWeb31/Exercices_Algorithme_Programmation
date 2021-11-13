@@ -29,6 +29,6 @@ function verifierConnexionUtilisateur(tabUtilisateurs, login, mdp) {
     if (login === tabUtilisateurs[cpt][0] && mdp === tabUtilisateurs[cpt][1]) {
       return true;
     }
-    return false;
   }
+  return false;
 }

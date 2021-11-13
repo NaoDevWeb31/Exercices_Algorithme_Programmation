@@ -1,0 +1,41 @@
+/****************************************** EXERCICE 34 *******************************************/
+
+FONCTION estConnecte(tabUtilisateurs, login, mdp)
+DÉBUT
+    POUR cpt ALLANT de 0 À taille(tabUtilisateurs)-1 PAR PAS DE 1 FAIRE
+        SI (login = tabUtilisateurs[cpt][0] ET mdp = tabUtilisateurs[cpt][1]) ALORS
+            RETOURNER tabUtilisateurs[cpt][2]
+        FINSI
+    FINPOUR
+
+    RETOURNER ""
+FIN
+
+ALGORITHME main
+VARIABLES
+    tabUtilisateurs[c][c] : TABLEAU CHAINE DE CARACTERE
+    login, mdp, role : CHAINE DE CARACTERE
+    nbEssaisRestants : ENTIER
+    CONSTANTE ENTIER NBESSAITOTAL → 3
+DÉBUT
+    tabUtilisateurs → [["Tya", "test1", "admin"], ["Milo", "test2", "User"], ["Lili", "test3", "user"]]
+    nbEssaisRestants → 1
+
+    FAIRE
+        AFFICHER "Saisir votre login : "
+        SAISIR login
+        AFFICHER "Saisir votre password : "
+        SAISIR mdp
+        role → estConnecte(tabUtilisateurs, login, mdp)
+        
+        SI (role = "") ALORS
+            AFFICHER "Combinaison login / password incorrect, encore ", (NBESSAITOTAL - nbEssaisRestants) , " essais"
+            nbEssaisRestants → nbEssaisRestants + 1
+        FINSI
+    TANT QUE (role === "" ET nbEssaisRestants <= NBESSAITOTAL)
+
+    SI (nbEssaisRestants > NBESSAITOTAL) ALORS
+        AFFICHER "Vous avez essayé trop de fois !\nFin du programme !"
+    SINON
+        AFFICHER "Vous êtes connecté et vos accès sont : ", role
+    FINSI
