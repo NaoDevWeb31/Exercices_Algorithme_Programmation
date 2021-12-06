@@ -41,3 +41,7 @@ Apprentissage de l'algorithmique, du pseudo-code et création de vos premiers pr
   <img width="800" src="https://www.filepicker.io/api/file/AJHZuvhLQkmmdi9dRxlN" name="Parcours pédagogique"/>
   </a>
 </p>
+
+#### Suite du parcours
+
+**Cours #4** ➤ [Les bases indispensables de la programmation : Le JavaScript et Node.JS](https://github.com/NaoDevWeb31/BasesProgrammation_JavaScript_NodeJS "Repository du cours #4")
